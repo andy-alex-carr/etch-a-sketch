@@ -22,6 +22,10 @@ function createGrid(resolution, width, height) {
     });
 }
 
+function removeGrid() {
+    document.querySelector('.grid').remove();
+}
+
 let blackness = 10;
 
 function setRandomHSLColor(square) {
@@ -36,4 +40,14 @@ function setRandomHSLColor(square) {
     }
 
     square.style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
+}
+
+function changeGrid() {
+    const resolution = prompt("Enter a valid size number (greater than 0 and less than or equal to 100):");
+    if (resolution > 0 && resolution <= 100) {
+        deleteGrid();
+        createGrid(resolution, 900, 900);
+    } else if (resolution <= 0 || resolution > 100) {
+        alert("ERROR");
+    }
 }

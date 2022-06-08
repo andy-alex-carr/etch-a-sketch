@@ -16,4 +16,18 @@ function createGrid(resolution, width, height) {
     container.appendChild(grid);
 }
 
+let blackness = 10;
 
+function setRandomHSLColor(square) {
+    const h = Math.floor(Math.random() * 256);
+    const s = Math.floor(Math.random() * 101);
+    const l = 100 - blackness;
+    
+    if (blackness === 100) {
+        blackness = 10;
+    } else {
+        blackness += 10;
+    }
+
+    square.style.backgroundColor = `hsl(${h}, ${s}%, ${l}%)`;
+}

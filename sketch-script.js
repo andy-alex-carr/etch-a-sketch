@@ -14,6 +14,12 @@ function createGrid(resolution, width, height) {
     grid.style.gridTemplateColumns = `repeat(${resolution}, 1fr)`;
     
     container.appendChild(grid);
+
+    const gridBoxes = document.querySelectorAll('.gridBox');
+
+    gridBoxes.forEach(box => {
+        box.addEventListener('mouseover', () => setRandomHSLColor(box));
+    });
 }
 
 let blackness = 10;

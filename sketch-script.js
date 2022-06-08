@@ -45,9 +45,13 @@ function setRandomHSLColor(square) {
 function changeGrid() {
     const resolution = prompt("Enter a valid size number (greater than 0 and less than or equal to 100):");
     if (resolution > 0 && resolution <= 100) {
-        deleteGrid();
+        removeGrid();
         createGrid(resolution, 900, 900);
     } else if (resolution <= 0 || resolution > 100) {
         alert("ERROR");
     }
 }
+
+document.getElementById('resolution').addEventListener('click', changeGrid);
+
+createGrid(16, 900, 900);
